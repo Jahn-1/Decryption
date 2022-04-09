@@ -1,0 +1,115 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 64px; 
+    /* height: 100vh; */
+    background-image: linear-gradient(to right,#0c3645, #07313a);
+    background-color: #626262;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    z-index: 9999;
+    line-height: 64px;
+}
+
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    line-height: 64px;
+    font-weight: 600;
+}
+
+.navbar-links img {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.navbar-links * {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    padding: 0 25px;
+    cursor: pointer;
+    font-size: 14pt;
+}
+
+.navbar-link:hover {
+    border-bottom: 4px solid #fff;
+    transition: all 0.2s ease-out;
+}
+
+.githubLogo {
+    height: 44px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+.navbar-title {
+    font-weight: 600;
+    font-size: 20pt;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.mobile-navbar-links {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    cursor: pointer;
+    margin: 20px 0;
+    font-size: 16pt;
+    font-weight: 600;
+}
+
+@media (max-width: 870px) {
+    .navbar {
+        height: 44px;
+        line-height: 44px;
+    }
+
+    .navbar-links * {
+        display: none;
+    }
+
+    .navbar-title {
+        font-size: 16pt;
+    }
+
+    .z {
+        padding-top: 44px;
+        height: 100%;
+        width: 100%;
+        z-index: 9;
+        position: fixed;
+        background-color: rgb(69, 104, 147);
+        transition: 0.3s ease-in-out;
+    }
+
+    .hamburger-menu {
+        display: initial;
+        height: 25px;
+        padding-top: 10px;
+        font-size: 18pt;
+        padding-right: 20px;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+    
+    .githubLogo {
+        height: 44px;
+        padding-top: 0;
+        padding-right: 0;
+        margin: 10px 0;
+    }
+}
