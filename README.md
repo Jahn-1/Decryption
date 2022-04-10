@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# COMP6841 assignment
+This assignments work can be found here:
+https://subcipher.netlify.app/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What this project was created with
 
-## Available Scripts
+This project was bootstrapped with [Create React App] and a firebase firestore database was integrated into it for extra features. This app was deployed on netlify.
 
-In the project directory, you can run:
+## Challenges
+Initially (for decoding in the game) i attempted to just replace the encoded strings every character that matched with a character in input textfields. This ended up not working because it would end up yeilding:
+d = e -> e = c
+abcde -> abcee -> abccc
 
-### `npm start`
+Instead it should have really been:
+abcde -> abcee -> abcec
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To get this done was to store the initally encoded string and each letter has a mapping to all its indexs in the (original encoded) string 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Moreover, another challenge faced whilst making this project was integrating the database. intially i attempted to integrate the realtime database but to not much success. To overcome this challenge i had ended up utilising firestore. This ended up actually being a better choice aswell from what ive researched since there is no use for true realtime data updates and such and also it would scale up cheaper in the theoretical case that this was to scale.
 
-### `npm test`
+Lastly, a challenge that presented itself was the clearing of input values upon re-rolling in the game mode. this presented to be a bit stubborn and seemed to work but in reality would fill up the text fields with undefined leading to some really weird behaviour. To overcome this challenge each input field was reset manually (through state to be technical)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Reflection
+Overall, even though at times some of the css'ing was pretty tedious and time consuming and ended up posing more of a time consumation than estimated, this assignment was very helpful and satisfying to create and will definitely be something i'll be showing off to my friends even though them actually using it encode would be a very bad idea!
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
