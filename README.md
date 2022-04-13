@@ -6,6 +6,16 @@ https://subcipher.netlify.app/
 
 This project was bootstrapped with [Create React App] and a firebase firestore database was integrated into it for extra features. This app was deployed on netlify.
 
+## Objectives
+
+- Decoding Strings
+- Encoding Strings
+- Disabling invalid character inputs
+- Connecting a database (firebase) to create game
+- Create game where you can decode others encrypted text
+- Be able to reroll the game and chosen text
+- Implement mobile responsivness and make UI even prettier
+
 ## Challenges
 Initially (for decoding in the game) i attempted to just replace the encoded strings every character that matched with a character in input textfields. This ended up not working because it would end up yeilding:
 d = e -> e = c
